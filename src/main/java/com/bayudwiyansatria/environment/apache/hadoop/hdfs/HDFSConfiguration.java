@@ -1,6 +1,6 @@
-package com.bayudwiyansatria.environment.apache.hdfs;
+package com.bayudwiyansatria.environment.apache.hadoop.hdfs;
 
-import com.bayudwiyansatria.environment.apache.Hadoop;
+import com.bayudwiyansatria.environment.apache.hadoop.Hadoop;
 
 public class HDFSConfiguration extends Hadoop {
     private static String HDFS_HOST = null;

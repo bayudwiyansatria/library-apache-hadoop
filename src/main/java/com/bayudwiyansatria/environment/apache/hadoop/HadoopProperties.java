@@ -1,4 +1,5 @@
-package com.bayudwiyansatria.environment.apache;
+package com.bayudwiyansatria.environment.apache.hadoop;
+
 
 import com.bayudwiyansatria.Core;
 
@@ -45,7 +46,7 @@ public class HadoopProperties extends Core {
 
     public String getResourceHDFS(){
         if(HdfsXML == null){
-            setResourceHDFS("conf/com.bayudwiyansatria.environment.apache.hdfs-site.xml");
+            setResourceHDFS("conf/com.bayudwiyansatria.environment.apache.hadoop.hdfs-site.xml");
         }
         return HdfsXML;
     }

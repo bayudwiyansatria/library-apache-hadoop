@@ -1,4 +1,4 @@
-package com.bayudwiyansatria.environment.apache;
+package com.bayudwiyansatria.environment.apache.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 

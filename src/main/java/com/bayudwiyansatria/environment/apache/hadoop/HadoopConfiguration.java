@@ -1,4 +1,4 @@
-package com.bayudwiyansatria.environment.apache;
+package com.bayudwiyansatria.environment.apache.hadoop;
 
 public class HadoopConfiguration extends HadoopProperties{
 
@@ -7,7 +7,7 @@ public class HadoopConfiguration extends HadoopProperties{
     private int HADOOP_MAX_ATTEMPT;
 
     public void setProperties(){
-        System.setProperty("HADOOP_USER_NAME", new com.bayudwiyansatria.Core().getUsername());
+        System.setProperty("HADOOP_USER_NAME", this.getUsername());
         this.getLogProperties();
     }
 

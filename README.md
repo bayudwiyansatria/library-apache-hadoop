@@ -68,6 +68,7 @@ Dependencies Repository : https://search.maven.org/
 * **HamCrest** : hamcrest-core - v1.3 (org.hamcrest:hamcrest-core:1.3).
 * **HamCrest** : hamcrest-library - v1.3 (org.hamcrest:hamcrest-library:1.3).
 * **BayuDwiyanSatria** : core - v1.1.7 (com.bayudwiyansatria:core:1.1.7).
+* **ApacheLoggingLog4j** : log4j-api - v2.11.2 (org.apache.logging.log4j:log4j-api:2.11.2).
 * **ApacheHadoop** : hadoop-client - v2.6.5 (org.apache.hadoop:hadoop-client:2.6.5).
 * **ApacheHadoop** : hadoop-hdfs - v2.6.5 (org.apache.hadoop:hadoop-hdfs:2.6.5).
 * **ApacheHadoop** : hadoop-yarn-server-nodemanager - v2.6.5 (org.apache.hadoop:hadoop-yarn-server-nodemanager:2.6.5).

@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
  
 	<!-- Project Information -->
-	<name>Bayu Dwiyan Satria - Apache Hadoop</name>
+	<name>Bayu Dwiyan Satria - Apache Hadoop Libraries</name>
 	<description>Bayu Dwiyan Satria For Apache Hadoop Environment.</description>
 	<url>https://bayudwiyansatria.github.io/Library-Apache-Hadoop</url>
 	<inceptionYear>2018</inceptionYear>
@@ -63,7 +63,7 @@
 		<url>https://github.com/bayudwiyansatria/Library-Apache-Hadoop/actions</url>
 	</ciManagement>
 
-  <distributionManagement>
+  	<distributionManagement>
 		<repository>
 			<id>jira</id>
 			<name>The Central Repository</name>

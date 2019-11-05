@@ -1,3 +1,27 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2019 Bayu Dwiyan Satria
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package com.bayudwiyansatria.environment.apache.hadoop.hdfs;
 
 import org.apache.hadoop.fs.FileSystem;
@@ -10,10 +34,10 @@ public class HDFS extends HDFSConfiguration {
 
     public String getHDFS(){
         String HdfsURL = "hdfs://" + this.getHDFSHost()+ ":" + this.getHDFSPort();
-        if(getUsername().equals(System.getProperty("user.name"))){
-            return HdfsURL +"/home/"+ getUsername() +"/";
-        } else if ((!getUsername().equals(System.getProperty("user.name"))) && (getUsername()!= null)){
-            return HdfsURL +"/home/"+ getUsername() +"/";
+        if(System.getProperty("user.name").equals(System.getProperty("user.name"))){
+            return HdfsURL +"/home/"+ System.getProperty("user.name") +"/";
+        } else if ((!System.getProperty("user.name").equals(System.getProperty("user.name"))) && (System.getProperty("user.name")!= null)){
+            return HdfsURL +"/home/"+ System.getProperty("user.name") +"/";
         } else {
             return HdfsURL +"/";
         }

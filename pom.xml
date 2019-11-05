@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    MIT License
+
+    Copyright (c) 2019 Bayu Dwiyan Satria
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.bayudwiyansatria.environment.apache</groupId>
-	<artifactId>hadoop</artifactId>
-	<version>1.0</version>
+	<groupId>com.bayudwiyansatria</groupId>
+	<artifactId>env-apache-hadoop</artifactId>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
  
 	<!-- Project Information -->
@@ -63,7 +88,7 @@
 		<url>https://github.com/bayudwiyansatria/Library-Apache-Hadoop/actions</url>
 	</ciManagement>
 
-  	<distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>jira</id>
 			<name>The Central Repository</name>
@@ -88,7 +113,6 @@
 		<checkstyle.version>8.11</checkstyle.version>
 
 		<!-- JVM Properties -->
-		<java.debug>true</java.debug>
 		<java.version>1.8</java.version>
 		<maven.version>3.6.1</maven.version>
 		<java.optimize>true</java.optimize>
@@ -147,20 +171,10 @@
 	<dependencies>
 		<!-- Logging -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>${slf4j.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<version>${apache-logging-log4j.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- Test -->
@@ -176,36 +190,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-core</artifactId>
-			<version>${hamcrest.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
-			<version>${hamcrest.version}</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.hamcrest</groupId>
-					<artifactId>hamcrest-core</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 		
 		<!--Required -->
 		<dependency>
 			<groupId>com.bayudwiyansatria</groupId>
 			<artifactId>core</artifactId>
-			<version>1.1.7</version>
+			<version>1.1.8-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -306,44 +296,7 @@
 		<finalName>${project.artifactId}-${project.version}</finalName>
 		<filters/>
 		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-shade-plugin</artifactId>
-					<version>${maven-shade-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>bundle-and-repackage</id>
-							<phase>package</phase>
-							<goals>
-								<goal>shade</goal>
-							</goals>
-							<configuration>
-								<dependencyReducedPomLocation>${basedir}/target/dependency-reduced-pom.xml</dependencyReducedPomLocation>
-								<shadeTestJar>true</shadeTestJar>
-								<artifactSet>
-									<includes>
-										<include>*:*</include>
-									</includes>
-								</artifactSet>
-								<filters>
-									<filter>
-										<artifact>*:*</artifact>
-										<excludes>
-											<exclude>META-INF/*.SF</exclude>
-											<exclude>META-INF/*.DSA</exclude>
-											<exclude>META-INF/*.RSA</exclude>
-										</excludes>
-									</filter>
-								</filters>
-								<transformers>
-									<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-								</transformers>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
+			<plugins/>
 		</pluginManagement>
 		<plugins>
 			<plugin>
@@ -492,6 +445,12 @@
 					<failOnWarning>false</failOnWarning>
 					<ignoredDependencies>
 						<ignoredDependency>org.slf4j:slf4j-simple</ignoredDependency>
+						<ignoredDependency>org.apache.logging.log4j:log4j-api</ignoredDependency>
+						<ignoredDependency>log4j:log4j</ignoredDependency>
+						<ignoredDependency>org.apache.hadoop:hadoop-common</ignoredDependency>
+						<ignoredDependency>org.apache.hadoop:hadoop-client</ignoredDependency>
+						<ignoredDependency>org.apache.hadoop:hadoop-hdfs</ignoredDependency>
+						<ignoredDependency>org.apache.hadoop:hadoop-yarn-server-nodemanager</ignoredDependency>
 					</ignoredDependencies>
 				</configuration>
 				<executions>

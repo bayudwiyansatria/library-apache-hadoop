@@ -31,7 +31,6 @@ public class HDFSConfiguration extends Hadoop {
     private static String HDFS_PORT = null;
 
     private static String FILE_PATH = null;
-    private static String RESOURCES = null;
     private static String FILE_SYSTEM = null;
 
     public void setHDFSHost(String HDFSUrl){

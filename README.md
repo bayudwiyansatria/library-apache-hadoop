@@ -27,6 +27,12 @@
 
 # Bayu Dwiyan Satria - Apache Hadoop Libraries
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
+![Github Actions](https://github.com/bayudwiyansatria/Library-Apache-Hadoop/workflows/Github%20Action/badge.svg)
+[![Build Status](https://dev.azure.com/bayudwiyansatria/Bayu%20Dwiyan%20Satria%20-%20Programming%20Library/_apis/build/status/Library-Apache-Hadoop?branchName=master)](https://dev.azure.com/bayudwiyansatria/Bayu%20Dwiyan%20Satria%20-%20Programming%20Library/_build/latest?definitionId=20&branchName=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2834a4963354432a9b5aec6a540c1b6)](https://www.codacy.com/manual/bayudwiyansatria/Library-Apache-Hadoop?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bayudwiyansatria/Library-Apache-Hadoop&amp;utm_campaign=Badge_Grade)
+
 Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation. It provides a software framework for distributed storage and processing of big data using the MapReduce programming model. Originally designed for computer clusters built from commodity hardware—still the common use—it has also found use on clusters of higher-end hardware. All the modules in Hadoop are designed with a fundamental assumption that hardware failures are common occurrences and should be automatically handled by the framework.
 
 |   Key     |   Description |

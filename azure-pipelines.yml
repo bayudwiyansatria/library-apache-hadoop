@@ -6,6 +6,8 @@
 # Contact : bayudwiyansatria@gmail.com / +62-823-9602-9583
 # Site : https://www.bayudwiyansatria.com
 
+name: 'Apache-Hadoop'
+
 trigger: none
 pr:
 - master
@@ -15,12 +17,19 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: 'Maven Build $(Build.BuildNumber)'
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    testRunTitle: 'Maven Test'
+    codeCoverageToolOption: 'JaCoCo'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+    checkStyleRunAnalysis: true
+    pmdRunAnalysis: true
+    findBugsRunAnalysis: true

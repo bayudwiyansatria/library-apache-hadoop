@@ -1,0 +1,26 @@
+# CI/CD
+# Unauthorized copying of this file, via any medium is strictly prohibited
+# Proprietary and confidential
+
+# Author : Bayu Dwiyan Satria
+# Contact : bayudwiyansatria@gmail.com / +62-823-9602-9583
+# Site : https://www.bayudwiyansatria.com
+
+trigger: none
+pr:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'

@@ -51,7 +51,7 @@ public class HDFSConfiguration extends Hadoop {
 
     public String getHDFSHost(){
         if(HDFS_HOST == null){
-            setHDFSHost("127.0.1.1");
+            setHDFSHost(new com.bayudwiyansatria.network.Network ().getIPv4AddressByInterface ( "ens33" ));
         }
         return HDFS_HOST;
     }

@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.environment.apache.hadoop;
+package com.bayudwiyansatria.apache.hadoop;
 import com.bayudwiyansatria.Core;
 
 public class HadoopProperties extends Core {

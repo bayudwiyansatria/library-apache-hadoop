@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.environment.apache.hadoop.hdfs;
+package com.bayudwiyansatria.apache.hadoop.hdfs;
 
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;

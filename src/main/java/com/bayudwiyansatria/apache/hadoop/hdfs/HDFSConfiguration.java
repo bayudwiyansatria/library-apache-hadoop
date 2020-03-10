@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.environment.apache.hadoop.hdfs;
+package com.bayudwiyansatria.apache.hadoop.hdfs;
 
-import com.bayudwiyansatria.environment.apache.hadoop.Hadoop;
+import com.bayudwiyansatria.apache.hadoop.Hadoop;
 
 public class HDFSConfiguration extends Hadoop {
     private static String HDFS_HOST = null;

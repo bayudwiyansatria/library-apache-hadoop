@@ -22,23 +22,23 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.environment.apache.hadoop.hdfs;
-
+package com.bayudwiyansatria.apache.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
 
-import java.io.IOException;
+public class Hadoop extends HadoopConfiguration{
+    public Configuration hadoopConfiguration;
 
-public class HDFSReader {
-
-    protected Configuration conf;
-    protected FileSystem hdfs;
-
-    public HDFSReader() throws IOException {
-        conf = new Configuration();
-        conf.setBoolean("dfs.support.append", true);
-        hdfs = FileSystem.get(conf);
+    public Configuration getHadoopConfiguration(){
+        this.hadoopConfiguration = new Configuration();
+        this.hadoopConfiguration.addResource(getResourceCore());
+        this.hadoopConfiguration.addResource(getResourceYarn());
+        this.hadoopConfiguration.addResource(getResourceHDFS());
+        this.hadoopConfiguration.addResource(getResourceMapReduce());
+        this.hadoopConfiguration.addResource(getLogProperties());
+        return hadoopConfiguration;
     }
+
+
 
 }

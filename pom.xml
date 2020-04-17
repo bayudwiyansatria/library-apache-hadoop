@@ -45,7 +45,6 @@
 		<url>https://github.com/bayudwiyansatria</url>
 	</organization>
 	<inceptionYear>2018</inceptionYear>
-
 	<licenses>
 		<license>
 			<name>MIT LICENSE</name>
@@ -83,19 +82,14 @@
 			<archive>bayudwiyansatria@gmail.com</archive>
 		</mailingList>
 	</mailingLists>
-
 	<scm>
 		<connection>scm:git:git://github.com/bayudwiyansatria/library-apache-hadoop.git</connection>
 		<developerConnection>scm:git:git@github.com:bayudwiyansatria/library-apache-hadoop.git</developerConnection>
 		<url>https://github.com/bayudwiyansatria/library-apache-hadoop</url>
 		<tag>HEAD</tag>
 	</scm>
-
 	<distributionManagement>
 		<repository>
-			<id>oss</id>
-			<name>The Central Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 			<layout>default</layout>
 		</repository>
 		<snapshotRepository>
@@ -106,6 +100,64 @@
 		</snapshotRepository>
 		<downloadUrl>https://search.maven.org/artifact/com.bayudwiyansatria/core</downloadUrl>
 	</distributionManagement>
+	
+	<issueManagement>
+		<system>Github</system>
+		<url>https://github.com/bayudwiyansatria/Library-Apache-Hadoop/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Github</system>
+		<url>https://github.com/bayudwiyansatria/Library-Apache-Hadoop/actions</url>
+		<notifiers>
+			<notifier>
+				<type>mail</type>
+				<sendOnError>true</sendOnError>
+				<sendOnFailure>true</sendOnFailure>
+				<sendOnSuccess>false</sendOnSuccess>
+				<sendOnWarning>false</sendOnWarning>
+				<configuration/>
+			</notifier>
+		</notifiers>
+	</ciManagement>
+	
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo1.maven.org/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>azure</id>
+			<name>Azure DevOps Artifacts</name>
+			<url>https://pkgs.dev.azure.com/bayudwiyansatria/_packaging/bayudwiyansatria/maven/v1</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo1.maven.org/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<issueManagement>
 		<system>Github</system>
@@ -167,7 +219,6 @@
 
 	<properties>
 		<organization.logo>https://cdn.bayudwiyansatria.com/assets/logo-full.png</organization.logo>
-
 		<!-- Project Properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -232,24 +283,20 @@
 		<apache-hadoop.version>2.6.5</apache-hadoop.version>
 		<apache-logging-log4j.version>2.11.2</apache-logging-log4j.version>
 		<bayudwiyansatria-lib.version>1.0-SNAPSHOT</bayudwiyansatria-lib.version>
-
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-
 			<dependency>
 				<groupId>com.bayudwiyansatria</groupId>
 				<artifactId>bayudwiyansatria-core</artifactId>
 				<version>${bayudwiyansatria-lib.version}</version>
 			</dependency>
-
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-api</artifactId>
 				<version>${apache-logging-log4j.version}</version>
 			</dependency>
-
 			<dependency>
 				<groupId>org.apache.hadoop</groupId>
 				<artifactId>hadoop-client</artifactId>
@@ -277,18 +324,15 @@
 			<scope>test</scope>
 			<exclusions/>
 		</dependency>
-
 		<dependency>
 			<groupId>com.bayudwiyansatria</groupId>
 			<artifactId>bayudwiyansatria-core</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-client</artifactId>
@@ -315,7 +359,6 @@
 		<testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
 		<extensions/>
 		<defaultGoal>package</defaultGoal>
-
 		<resources>
 			<resource>
 				<directory>${project.basedir}/src/main/resources</directory>
@@ -327,7 +370,6 @@
 				</excludes>
 			</resource>
 		</resources>
-
 		<testResources>
 			<testResource>
 				<directory>${project.basedir}/src/test/resources</directory>
@@ -339,7 +381,6 @@
 				</excludes>
 			</testResource>
 		</testResources>
-
 		<filters/>
 		<pluginManagement>
 			<plugins>
@@ -389,27 +430,22 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -427,37 +463,30 @@
 					</ignoredDependencies>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-docck-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-help-plugin</artifactId>
@@ -482,17 +511,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-plugin-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -537,37 +563,30 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-publish-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.rat</groupId>
 				<artifactId>apache-rat-plugin</artifactId>
@@ -587,7 +606,6 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 			</plugin>
-
 			<plugin>
 				<groupId>com.mycila</groupId>
 				<artifactId>license-maven-plugin</artifactId>
@@ -600,14 +618,12 @@
 	<reporting>
 		<outputDirectory>${project.basedir}/target/site</outputDirectory>
 		<plugins>
-
 			<!-- Java Documentation -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven-javadoc-plugin.version}</version>
 			</plugin>
-
 			<!-- Code Coverage -->
 			<plugin>
 				<groupId>org.jacoco</groupId>

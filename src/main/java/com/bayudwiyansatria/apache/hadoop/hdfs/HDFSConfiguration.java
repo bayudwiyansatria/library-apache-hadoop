@@ -22,9 +22,9 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.environment.apache.hadoop.hdfs;
+package com.bayudwiyansatria.apache.hadoop.hdfs;
 
-import com.bayudwiyansatria.environment.apache.hadoop.Hadoop;
+import com.bayudwiyansatria.apache.hadoop.Hadoop;
 
 public class HDFSConfiguration extends Hadoop {
     private static String HDFS_HOST = null;
@@ -51,7 +51,7 @@ public class HDFSConfiguration extends Hadoop {
 
     public String getHDFSHost(){
         if(HDFS_HOST == null){
-            setHDFSHost("127.0.1.1");
+            setHDFSHost(new com.bayudwiyansatria.network.Network ().getIPv4AddressByInterface ( "ens33" ));
         }
         return HDFS_HOST;
     }

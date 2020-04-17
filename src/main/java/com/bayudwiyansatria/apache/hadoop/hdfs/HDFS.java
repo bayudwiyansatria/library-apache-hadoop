@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.bayudwiyansatria.environment.apache.hadoop.hdfs;
+package com.bayudwiyansatria.apache.hadoop.hdfs;
 
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -34,10 +34,10 @@ public class HDFS extends HDFSConfiguration {
 
     public String getHDFS(){
         String HdfsURL = "hdfs://" + this.getHDFSHost()+ ":" + this.getHDFSPort();
-        if(System.getProperty("user.name").equals(System.getProperty("user.name"))){
+        if(System.getProperty("user.name").equals(new com.bayudwiyansatria.Core ().getSystemUsername ())){
             return HdfsURL +"/home/"+ System.getProperty("user.name") +"/";
-        } else if ((!System.getProperty("user.name").equals(System.getProperty("user.name"))) && (System.getProperty("user.name")!= null)){
-            return HdfsURL +"/home/"+ System.getProperty("user.name") +"/";
+        } else if ((!System.getProperty("user.name").equals(new com.bayudwiyansatria.Core ().getSystemUsername ())) && (new com.bayudwiyansatria.Core ().getSystemUsername ()!= null)){
+            return HdfsURL +"/home/"+ new com.bayudwiyansatria.Core ().getSystemUsername () +"/";
         } else {
             return HdfsURL +"/";
         }

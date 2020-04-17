@@ -158,65 +158,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
-	<issueManagement>
-		<system>Github</system>
-		<url>https://github.com/bayudwiyansatria/library-apache-hadoop/issues</url>
-	</issueManagement>
-	<ciManagement>
-		<system>Github</system>
-		<url>https://github.com/bayudwiyansatria/library-apache-hadoop/actions</url>
-		<notifiers>
-			<notifier>
-				<type>mail</type>
-				<sendOnError>true</sendOnError>
-				<sendOnFailure>true</sendOnFailure>
-				<sendOnSuccess>false</sendOnSuccess>
-				<sendOnWarning>false</sendOnWarning>
-				<configuration/>
-			</notifier>
-		</notifiers>
-	</ciManagement>
-
-	<repositories>
-		<repository>
-			<id>central</id>
-			<name>Central Repository</name>
-			<url>https://repo1.maven.org/maven2</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>azure</id>
-			<name>Azure DevOps Artifacts</name>
-			<url>https://pkgs.dev.azure.com/bayudwiyansatria/_packaging/bayudwiyansatria/maven/v1</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>central</id>
-			<name>Central Repository</name>
-			<url>https://repo1.maven.org/maven2</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
+	
 	<properties>
 		<organization.logo>https://cdn.bayudwiyansatria.com/assets/logo-full.png</organization.logo>
 		<!-- Project Properties -->
